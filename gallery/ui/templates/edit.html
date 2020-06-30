@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h1>Edit User: {{ username }}</h1>
+<p1>Enter new values for password and full name fields, otherwise keep field blank to keep current values. 
+<br /> <br />
+<form action="/admin/edit/modify" method="POST">
+username: <input name=username value={{ username }} /><br />
+password: <input name=password value="-" /><br />
+full name: <input name=full_name value="-" /><br />
+<input type="submit" value="Modify">
+</form>
+
+<br /> <br /><form action="/admin/edit/delete" method="POST">
+username: <input name=username value={{ username }} /><br />
+Delete {{ username }} ?:<br />
+<input type="submit" value="Confirm and Delete">
+</form>
+
+</body>
+</html>
