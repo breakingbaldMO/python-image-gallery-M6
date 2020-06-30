@@ -9,7 +9,7 @@ from botocore.exceptions import ClientError
 
 
 def get_secret_image_gallery():
-    secret_name = "sec-image_gallery-image_gallery"
+    secret_name = "sec-ig-db-image-gallery"
     region_name = "us-east-1"
 
     # Create a Secrets Manager client
