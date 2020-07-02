@@ -2,17 +2,34 @@ from flask import Flask
 from flask import request
 from flask import render_template
 from flask import redirect, url_for, session
+from secrets import get_secret_flask_session
+from functools import wraps
 import db
 import secrets
 
 
 app = Flask(__name__)
-app.secret_key = b'gdfgdrggfg1453'
+#app.secret_key = b'gdfgdrggfg1453'
+app.secret_key = get_secret_flask_session()
+
+
+def check_admin():
+    return 'admin' in session
+
+def current_user():
+    return 'username' in session
+
+
+def requires_admin(view):
+    @wraps(view)
+    def decorated(**kwargs):
+        if not check_admin():
+            return redirect('/login')
+        return view(**kwargs)
+    return decorated
 
 @app.route('/', methods=["GET", "POST"])
-def home():
-    
-        
+def home():        
     return "Welcome to the Image Gallery User Database. For database admin functions please navigate to elisamek.codes/admin"
 
 
@@ -49,12 +66,14 @@ def debugSession():
         result += key+"->"+str(value)+"<br />"
     return result
 
+@requires_admin
 @app.route('/admin', methods=["GET", "POST"])
 def index():
     db.connect()
         
     return render_template('index.html', username=db.select_all_usernames("users"))
 
+@requires_admin
 @app.route('/admin/edit/<username>')
 def edit(username):
      return render_template('edit.html', username=username)
@@ -69,7 +88,7 @@ def modify():
     res = db.select_user_info(username, 'users') 
     db.close()
     return render_template('modify.html', user_info=res)
-    
+@requires_admin    
 @app.route('/admin/addUser')
 def addUser():
     return render_template('addUser.html')
@@ -101,3 +120,5 @@ def main_delete():
     username = username.strip()
     db.delete_user(username)
     return render_template('deleteSuccessful.html',username= username)
+
+
