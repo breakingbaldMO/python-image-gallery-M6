@@ -1,19 +1,46 @@
 from flask import Flask
 from flask import request
 from flask import render_template
-from flask import redirect, url_for
-from . import db
-from . import secrets
+from flask import redirect, url_for, session
+import db
+import secrets
 
 
 app = Flask(__name__)
-
+app.secret_key = b'gdfgdrggfg1453'
 
 @app.route('/', methods=["GET", "POST"])
 def home():
     
         
     return "Welcome to the Image Gallery User Database. For database admin functions please navigate to elisamek.codes/admin"
+
+
+@app.route('/invalidLogin')
+def invalidLogin():
+    return "Invalid login"
+
+@app.route('/validLogin')
+def validLogin():
+    return "Valid login"
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    db.connect()
+    if request.method == 'POST':
+        password = db.select_password(request.form["username"])
+       
+        form_pass = request.form["password"]
+        if password != form_pass:
+            return redirect('/invalidLogin')
+            
+        else:
+            session['username'] = request.form["username"]
+            return redirect('/validLogin')
+    else:
+        db.close()
+        return render_template('login.html')
 
 
 @app.route('/admin', methods=["GET", "POST"])

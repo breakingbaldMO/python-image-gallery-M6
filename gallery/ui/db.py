@@ -1,6 +1,6 @@
 import psycopg2
 import json
-from . import secrets
+import secrets
 
 connection = None
 
@@ -36,7 +36,7 @@ def get_dbname(secret):
 def connect():
     global connection
     secret = get_secret()
-    connection = psycopg2.connect(host=get_host(secret), dbname=get_dbname(secret), user=get_username(secret), password=get_password(secret))
+    connection = psycopg2.connect(host='database-2.cv1n9oljqdta.us-east-1.rds.amazonaws.com', dbname='postgres', user='postgres', password='password')
     connection.set_session(autocommit=True)
 
 
@@ -93,13 +93,23 @@ def select_all(table):
     return res
 
 def select_password(username):
-    res = execute("select password from users where username='" + username + "\'").fetchall()
-    return res
-
+    res = execute("select password from users where username='" + username + "\'").fetchone()
+    for row in res:
+        password = row
+    return password
 
 def select_user_info(username, table):
     res = execute("select * from " + table + " where username='" + username + "';").fetchall()
     return res
+
+def select_user_info_string(username, table):
+    cursor = execute("select * from " + table + " where username='" + username + "';").fetchall()
+    row = cursor.fetchone()
+    if row is None:
+        return None
+    else:
+        res =  row[1]
+        return res
 
 def select_all_usernames(table):
     res = execute('select username from ' + table).fetchall()
