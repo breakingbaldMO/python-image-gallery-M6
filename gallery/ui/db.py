@@ -94,9 +94,10 @@ def select_all(table):
 
 def select_password(username):
     res = execute("select password from users where username='" + username + "\'").fetchone()
-    for row in res:
-        password = row
-    return password
+    if res:
+   	 for row in res:
+       	     password = row
+   	 return password
 
 def select_user_info(username, table):
     res = execute("select * from " + table + " where username='" + username + "';").fetchall()

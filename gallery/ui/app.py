@@ -33,7 +33,7 @@ def login():
        
         form_pass = request.form["password"]
         if password != form_pass:
-            return redirect('/invalidLogin')
+            return redirect('/login')
             
         else:
             session['username'] = request.form["username"]
@@ -42,6 +42,12 @@ def login():
         db.close()
         return render_template('login.html')
 
+@app.route('/debugSession')
+def debugSession():
+    result = " "
+    for key,value in session.items():
+        result += key+"->"+str(value)+"<br />"
+    return result
 
 @app.route('/admin', methods=["GET", "POST"])
 def index():
