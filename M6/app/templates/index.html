@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h1>Welcome to the Admin Page for the Users Database Table</h1>
+<p1>Listed below are the usernames currently in the table. <br /><br />Select a user below to modify that user's information or select the Add User link to add a user to the table.<br /></p1>
+    <br /> <a href="{{url_for('addUser')}}">Add User</a><br />
+    {% for username in username %}
+      <br/> <a href="{{url_for('edit', username=username[0])}}">{{ username[0] }}</a> <form action="/admin/delete" method="POST">
+<input type="hidden" name=username value={{ username[0] }}>
+<input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+</form>
+</li>
+    {% endfor %}
+</body>
+</html>
