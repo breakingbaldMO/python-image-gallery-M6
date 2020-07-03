@@ -7,13 +7,14 @@ from functools import wraps
 import db
 import secrets
 
+
 app = Flask(__name__)
 # app.secret_key = b'gdfgdrggfg1453'
 app.secret_key = get_secret_flask_session()
 
 
 def check_admin():
-    return 'username' in session and 'username' == 'admin'
+    return 'admin' in session
 
 
 def current_user():
@@ -25,17 +26,8 @@ def requires_admin(view):
     def decorated(**kwargs):
         if not check_admin():
             return redirect('/login')
-        return redirect('/login')
+        return view(**kwargs)
     return decorated
-
-
-def req_current_user(view):
-    @wraps(view)
-    def decorated(**kwargs):
-        if not current_user():
-           return redirect('/login')
-        view(**kwargs)
-    return decorated 
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -51,13 +43,6 @@ def invalidLogin():
 @app.route('/validLogin')
 def validLogin():
     return "Valid login"
-
-@app.route('/inc')
-def inc():
-    if 'value' not in session:
-        session['value'] = 0
-    session['value'] = session['value'] + 1
-    return "<h1>"+str(session['value'])+"</h1>"
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -85,7 +70,14 @@ def debugSession():
         result += key+"->"+str(value)+"<br />"
     return result
 
-@req_current_user
+@app.route('/inc')
+def inc():
+    if 'value' not in session:
+        session['value'] = 0
+    session['value'] = session['value'] + 1
+    return "<h1>"+str(session['value']+"</h1>")
+
+
 @requires_admin
 @app.route('/admin', methods=["GET", "POST"])
 def index():
@@ -110,14 +102,13 @@ def modify():
     db.close()
     return render_template('modify.html', user_info=res)
 
-@req_current_user
+
 @requires_admin    
 @app.route('/admin/addUser')
 def addUser():
     return render_template('addUser.html')
 
-@req_current_user
-@requires_admin
+
 @app.route('/admin/addUser/added', methods=['POST'])
 def added():
     db.connect()
@@ -129,7 +120,7 @@ def added():
     db.close()
     return render_template('added.html', user_info=res)
 
-@requires_admin
+
 @app.route('/admin/edit/delete', methods=['POST'])
 def delete():
     db.connect()
@@ -139,8 +130,7 @@ def delete():
     db.close()    
     return render_template('deleteSuccessful.html',username= username)
 
-@req_current_user
-@requires_admin
+
 @app.route('/admin/delete', methods=['POST'])
 def main_delete():
     db.connect()
@@ -148,6 +138,5 @@ def main_delete():
     username = username.strip()
     db.delete_user(username)
     return render_template('deleteSuccessful.html',username= username)
-
 
 
