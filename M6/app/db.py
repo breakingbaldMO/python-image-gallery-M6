@@ -12,7 +12,7 @@ def init_app(app):
 
 def connect():
     global connection
-    connection = psycopg2.connect(host='database-2.cv1n9oljqdta.us-east-1.rds.amazonaws.com', dbname='postgres', user='postgres', password='password')
+    connection = psycopg2.connect(host='database-1.cv1n9oljqdta.us-east-1.rds.amazonaws.com', dbname='postgres', user='postgres', password='password')
     connection.set_session(autocommit=True)
 
 
