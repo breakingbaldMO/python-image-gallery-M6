@@ -1,0 +1,20 @@
+FROM ubuntu:latest
+
+RUN apt-get update -y && apt-get install -y python3 python3-pip libpcre3 libpcre3-dev git
+RUN git clone https://github.com/breakingbaldMO/python-image-gallery-M6.git
+RUN cd python-image-gallery-M6/M6/app
+
+WORKDIR /python-image-gallery-M6/M6/app
+RUN pip3 install -r requirements.txt
+EXPOSE 5555
+
+ENV FLASK_APP=app.py
+ENV FLASK_ENV=development
+ENV PG_HOST=database-2.cv1n9oljqdta.us-east-1.rds.amazonaws.com
+ENV PG_PORT=5432
+ENV IG_DATABASE=postgres
+ENV IG_USER=postgres
+ENV IG_PASSWD=password
+ENV IG_PASSWD_FILE=''
+ENV S3_IMAGE_BUCKET=''
+CMD ["uwsgi", "--http", ":5555", "--module", "app:app", "--master", "--processes", "4", "--threads", "2", "--stats", "0.0.0.0:9191"]

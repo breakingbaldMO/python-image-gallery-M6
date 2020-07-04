@@ -1,7 +1,14 @@
 import psycopg2
+import os
 import json
 
 connection = None
+
+host =os.environ['PG_HOST']
+port = os.environ['PG_PORT']
+db = os.environ['IG_DATABASE']
+user = os.environ['IG_USER']
+password = os.environ['IG_PASSWD']
 
 def close():
     connection.close()
@@ -12,7 +19,7 @@ def init_app(app):
 
 def connect():
     global connection
-    connection = psycopg2.connect(host='database-1.cv1n9oljqdta.us-east-1.rds.amazonaws.com', dbname='postgres', user='postgres', password='password')
+    connection = psycopg2.connect(host=host, dbname=db, user=user, password=password)
     connection.set_session(autocommit=True)
 
 

@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="249b973d-053c-46e3-8499-028c91b19089" name="Default Changelist" comment="added M6 folder for docker">
+      <change afterPath="$PROJECT_DIR$/M6/Dockerfile.production2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/M6/app/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/M6/app/db.py" afterDir="false" />
     </list>
@@ -92,6 +93,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="added M6 folder for docker" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="778" y="352" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593894857961">
+      <screen x="0" y="23" width="1792" height="1045" />
+    </state>
+    <state x="778" y="352" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1792.1045@0.23.1792.1045" timestamp="1593894857961" />
     <state x="736" y="311" key="MultipleFileMergeDialog" timestamp="1593786744958">
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
