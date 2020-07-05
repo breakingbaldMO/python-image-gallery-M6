@@ -18,6 +18,4 @@ ENV IG_PASSWD=IG_PASSWD_FILE
 ENV IG_PASSWD_FILE=password.txt
 ENV S3_IMAGE_BUCKET=''
 
-RUN createDB
-
-CMD ["uwsgi", "--http", ":5555", "--module", "app:app", "--master", "--processes", "4", "--threads", "2", "--stats", "0.0.0.0:9191"]
+CMD ["uwsgi", "--http", "8888:5555", "--module", "app:app", "--master", "--processes", "4", "--threads", "2", "--stats", "0.0.0.0:9191"]
