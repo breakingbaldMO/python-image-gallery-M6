@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+docker run --name postgres -it --rm -v /home/ec2-user/secrets:/mnt/secrets -v pg:/var/lib/postgresql/data postgres
+
