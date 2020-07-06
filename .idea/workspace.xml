@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="249b973d-053c-46e3-8499-028c91b19089" name="Default Changelist" comment="createDB script">
-      <change afterPath="$PROJECT_DIR$/M6/app/createDB.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/M6/app/create_tables.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/M6/Dockerfile.production2" beforeDir="false" afterPath="$PROJECT_DIR$/M6/Dockerfile.production2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M6/app/createDB" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/M6/app/createDB.sh" beforeDir="false" afterPath="$PROJECT_DIR$/M6/app/createDB" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +31,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1e8JGuhAJ05nEvOCyPEI78tD2Ur" />
   <component name="ProjectViewState">
@@ -94,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593978336918</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="createDB script">
+      <created>1593985706731</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1593985706731</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,17 +129,21 @@
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
     <state x="778" y="352" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1792.1045@0.23.1792.1045" timestamp="1593975924887" />
-    <state x="736" y="311" key="MultipleFileMergeDialog" timestamp="1593786744958">
+    <state x="736" y="311" key="MultipleFileMergeDialog" timestamp="1593985734452">
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
-    <state x="736" y="311" key="MultipleFileMergeDialog/0.23.1792.1045@0.23.1792.1045" timestamp="1593786744958" />
-    <state x="698" y="283" key="Vcs.Push.Dialog.v2" timestamp="1593978341813">
+    <state x="736" y="311" key="MultipleFileMergeDialog/0.23.1792.1045@0.23.1792.1045" timestamp="1593985734452" />
+    <state x="698" y="283" key="Vcs.Push.Dialog.v2" timestamp="1593985768106">
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
-    <state x="698" y="283" key="Vcs.Push.Dialog.v2/0.23.1792.1045@0.23.1792.1045" timestamp="1593978341813" />
+    <state x="698" y="283" key="Vcs.Push.Dialog.v2/0.23.1792.1045@0.23.1792.1045" timestamp="1593985768106" />
     <state x="643" y="123" width="911" height="840" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593787014821">
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
     <state x="643" y="123" width="911" height="840" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1792.1045@0.23.1792.1045" timestamp="1593787014821" />
+    <state x="640" y="338" key="git4idea.merge.GitPullDialog" timestamp="1593999300137">
+      <screen x="0" y="23" width="1792" height="1045" />
+    </state>
+    <state x="640" y="338" key="git4idea.merge.GitPullDialog/0.23.1792.1045@0.23.1792.1045" timestamp="1593999300137" />
   </component>
 </project>
