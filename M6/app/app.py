@@ -30,7 +30,7 @@ def requires_admin(view):
 
 @app.route('/', methods=["GET", "POST"])
 def home():        
-    return "Welcome to the Image Gallery User Database. For database admin functions please navigate to elisamek.codes/admin"
+    return redirect('/login')
 
 
 @app.route('/invalidLogin')

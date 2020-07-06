@@ -1,13 +1,22 @@
 FROM ubuntu:latest
 
-RUN apt-get update -y && apt-get install -y python3 python3-pip
-
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -y && apt-get install -y python3 python3-pip libpcre3 libpcre3-dev git postgresql
+RUN git clone https://github.com/breakingbaldMO/python-image-gallery-M6.git
+RUN cd python-image-gallery-M6/M6/app
+WORKDIR /python-image-gallery-M6/M6/app
 COPY app /app/
-WORKDIR /app
 RUN pip3 install -r requirements.txt
-
-EXPOSE 5000
+EXPOSE 5555
 
 ENV FLASK_APP=app.py
 ENV FLASK_ENV=development
+ENV PG_HOST=database-3.cv1n9oljqdta.us-east-1.rds.amazonaws.com
+ENV PG_PORT=5432
+ENV IG_DATABASE=postgres
+ENV IG_USER=postgres
+ENV IG_PASSWD=password
+ENV IG_PASSWD_FILE=password.txt
+ENV S3_IMAGE_BUCKET=''
+
 CMD ["flask", "run", "--host", "0.0.0.0"]

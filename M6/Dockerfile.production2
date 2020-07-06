@@ -6,7 +6,7 @@ RUN cd python-image-gallery-M6/M6/app
 WORKDIR /python-image-gallery-M6/M6/app
 COPY app /app/
 RUN pip3 install -r requirements.txt
-EXPOSE 8888
+EXPOSE 5555
 
 ENV FLASK_APP=app.py
 ENV FLASK_ENV=development
@@ -19,4 +19,4 @@ ENV IG_PASSWD_FILE=password.txt
 ENV S3_IMAGE_BUCKET=''
 
 RUN /app/createDB
-CMD ["uwsgi", "--http", ":8888", "--module", "app:app", "--master", "--processes", "4", "--threads", "2", "--stats", "0.0.0.0:9191"]
+CMD ["uwsgi", "--http", ":5555", "--module", "app:app", "--master", "--processes", "4", "--threads", "2", "--stats", "0.0.0.0:9191"]

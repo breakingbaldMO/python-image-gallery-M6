@@ -21,8 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="249b973d-053c-46e3-8499-028c91b19089" name="Default Changelist" comment="createDB script">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/M6/Dockerfile.flask" beforeDir="false" afterPath="$PROJECT_DIR$/M6/Dockerfile.flask" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/M6/Dockerfile.production2" beforeDir="false" afterPath="$PROJECT_DIR$/M6/Dockerfile.production2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M6/app/createDB.sh" beforeDir="false" afterPath="$PROJECT_DIR$/M6/app/createDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/M6/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/M6/app/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593985706731</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="createDB script">
+      <created>1594000249969</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1594000249969</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,10 +141,10 @@
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
     <state x="736" y="311" key="MultipleFileMergeDialog/0.23.1792.1045@0.23.1792.1045" timestamp="1593985734452" />
-    <state x="698" y="283" key="Vcs.Push.Dialog.v2" timestamp="1593985768106">
+    <state x="698" y="283" key="Vcs.Push.Dialog.v2" timestamp="1594000257671">
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
-    <state x="698" y="283" key="Vcs.Push.Dialog.v2/0.23.1792.1045@0.23.1792.1045" timestamp="1593985768106" />
+    <state x="698" y="283" key="Vcs.Push.Dialog.v2/0.23.1792.1045@0.23.1792.1045" timestamp="1594000257671" />
     <state x="643" y="123" width="911" height="840" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593787014821">
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
