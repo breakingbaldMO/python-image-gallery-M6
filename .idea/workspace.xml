@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="249b973d-053c-46e3-8499-028c91b19089" name="Default Changelist" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/M6/app/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/M6/app/db.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594091627123</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update">
+      <created>1594092090910</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1594092090910</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,18 +227,18 @@
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
     <state x="736" y="311" key="MultipleFileMergeDialog/0.23.1792.1045@0.23.1792.1045" timestamp="1593985734452" />
-    <state x="698" y="283" key="Vcs.Push.Dialog.v2" timestamp="1594091631239">
+    <state x="698" y="283" key="Vcs.Push.Dialog.v2" timestamp="1594092096552">
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
-    <state x="698" y="283" key="Vcs.Push.Dialog.v2/0.23.1792.1045@0.23.1792.1045" timestamp="1594091631239" />
+    <state x="698" y="283" key="Vcs.Push.Dialog.v2/0.23.1792.1045@0.23.1792.1045" timestamp="1594092096552" />
     <state x="643" y="123" width="911" height="840" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593787014821">
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
     <state x="643" y="123" width="911" height="840" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1792.1045@0.23.1792.1045" timestamp="1593787014821" />
-    <state x="350" y="123" width="910" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1594092083923">
+    <state x="350" y="123" width="910" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1594092194490">
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
-    <state x="350" y="123" width="910" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1792.1045@0.23.1792.1045" timestamp="1594092083923" />
+    <state x="350" y="123" width="910" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1792.1045@0.23.1792.1045" timestamp="1594092194490" />
     <state x="640" y="338" key="git4idea.merge.GitPullDialog" timestamp="1593999300137">
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
