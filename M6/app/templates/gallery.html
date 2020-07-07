@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Image Gallery</h1>
+        <a href="/">Return to Home Page</a>
+        {%
+        for image in images:
+        %}
+        <img src="data:image/png;base64, {{image}}" alt="" height="200" width="200">
+        {%
+        endfor
+        %}
+    </div>
+</body>
+</html>
