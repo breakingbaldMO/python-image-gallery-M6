@@ -19,8 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="249b973d-053c-46e3-8499-028c91b19089" name="Default Changelist" comment="Update M6 repo">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="249b973d-053c-46e3-8499-028c91b19089" name="Default Changelist" comment="added init.py">
+      <change beforePath="$PROJECT_DIR$/M6/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/M6/app/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +51,8 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/M6/app" />
+      <recent name="$PROJECT_DIR$/M6" />
+      <recent name="$PROJECT_DIR$/gallery" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -143,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594088357213</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added init.py">
+      <created>1594090472571</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1594090472571</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +174,8 @@
     <MESSAGE value="createDB script" />
     <MESSAGE value="changed homepage to login" />
     <MESSAGE value="Update M6 repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update M6 repo" />
+    <MESSAGE value="added init.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="added init.py" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="383" key="#SQL_Dialects" timestamp="1593975220533">
@@ -180,10 +190,10 @@
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
     <state x="736" y="311" key="MultipleFileMergeDialog/0.23.1792.1045@0.23.1792.1045" timestamp="1593985734452" />
-    <state x="698" y="283" key="Vcs.Push.Dialog.v2" timestamp="1594088361227">
+    <state x="698" y="283" key="Vcs.Push.Dialog.v2" timestamp="1594090477858">
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
-    <state x="698" y="283" key="Vcs.Push.Dialog.v2/0.23.1792.1045@0.23.1792.1045" timestamp="1594088361227" />
+    <state x="698" y="283" key="Vcs.Push.Dialog.v2/0.23.1792.1045@0.23.1792.1045" timestamp="1594090477858" />
     <state x="643" y="123" width="911" height="840" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593787014821">
       <screen x="0" y="23" width="1792" height="1045" />
     </state>
