@@ -1,7 +1,7 @@
 import psycopg2
 import json
 import secrets
-import db
+
 
 
 connection = None
