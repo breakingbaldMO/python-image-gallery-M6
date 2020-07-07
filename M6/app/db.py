@@ -1,8 +1,8 @@
 import psycopg2
 import json
 import secrets
-from . import db
-from . import s3
+import db
+
 
 connection = None
 
