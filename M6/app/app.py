@@ -2,7 +2,7 @@ from flask import Flask
 from flask import request
 from flask import render_template
 from flask import redirect, url_for, session
-#from . import s3
+from . import s3
 from . import db
 import base64
 
@@ -31,28 +31,28 @@ def upload():
     return render_template('upload.html')
 
 
-# @app.route('/gallery', methods=["POST", "GET"])
-# def gallery():
-#     images = []
-#     user = session.get('username')
-#     image_names = db.select_all_images(user)
-#     for name in image_names:
-#         image_data = s3.get_object("eli.samek.image-gallery", name[0])["Body"].read()
-#         image = base64.b64encode(image_data).decode("utf-8")
-#         images.append(image)
-#     return render_template('gallery.html', images=images)
+@app.route('/gallery', methods=["POST", "GET"])
+def gallery():
+    images = []
+    user = session.get('username')
+    image_names = db.select_all_images(user)
+    for name in image_names:
+        image_data = s3.get_object("eli.samek.image-gallery", name[0])["Body"].read()
+        image = base64.b64encode(image_data).decode("utf-8")
+        images.append(image)
+    return render_template('gallery.html', images=images)
 
 
-# @app.route('/uploadImage', methods=["POST", "GET"])
-# def uploadImage():
-#     if request.method == "POST":
-#         f = request.files['file']
-#         user = session.get('username')
-#         filename = {f.filename}
-#         key = user + "-" + str({f.filename})
-#         s3.put_object("eli.samek.image-gallery", key, f)
-#         db.add_image(user, key)
-#         return render_template('main.html')
+@app.route('/uploadImage', methods=["POST", "GET"])
+def uploadImage():
+    if request.method == "POST":
+        f = request.files['file']
+        user = session.get('username')
+        filename = {f.filename}
+        key = user + "-" + str({f.filename})
+        s3.put_object("eli.samek.image-gallery", key, f)
+        db.add_image(user, key)
+        return render_template('main.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
