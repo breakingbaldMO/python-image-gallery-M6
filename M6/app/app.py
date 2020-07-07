@@ -2,8 +2,8 @@ from flask import Flask
 from flask import request
 from flask import render_template
 from flask import redirect, url_for, session
-from . import s3
-from . import db
+import s3
+import db
 import base64
 
 app = Flask(__name__)
