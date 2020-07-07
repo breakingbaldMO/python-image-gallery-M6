@@ -26,7 +26,6 @@ def connect():
     connection.set_session(autocommit=True)
 
 
-
 def execute(query, args=None):
     global connection
     cursor = connection.cursor()

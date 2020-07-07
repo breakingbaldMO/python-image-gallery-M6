@@ -94,7 +94,8 @@ def index():
     if not check_admin():
         return redirect('/login')
     db.connect()
-    return render_template('index.html', username=db.select_all_usernames("users"))
+    if check_admin():
+       return render_template('index.html', username=db.select_all_usernames("users"))
 
 
 @app.route('/admin/edit/<username>')
