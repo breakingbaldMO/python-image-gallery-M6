@@ -3,7 +3,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y && apt-get install -y python3 python3-pip libpcre3 libpcre3-dev git postgresql
 RUN git clone https://github.com/breakingbaldMO/python-image-gallery-M6.git
 RUN cd python-image-gallery-M6/M6/app
-WORKDIR /python-image-gallery-M6/M6/app
+
+WORKDIR /app/
 COPY app /app/
 RUN pip3 install -r requirements.txt
 EXPOSE 5555
@@ -18,5 +19,4 @@ ENV IG_PASSWD=password
 ENV IG_PASSWD_FILE=password.txt
 ENV S3_IMAGE_BUCKET=''
 
-RUN /app/createDB
 CMD ["uwsgi", "--http", ":5555", "--module", "app:app", "--master", "--processes", "4", "--threads", "2", "--stats", "0.0.0.0:9191"]

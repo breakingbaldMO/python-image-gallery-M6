@@ -1,0 +1,36 @@
+---
+version: "3"
+
+services:
+     
+   database:
+     image: postgres:11
+     environment:
+       POSTGRES_USER: image_gallery
+       POSTGRES_DB: image_gallery
+       POSTGRES_PASSWORD: "password"
+       PGDATA: "/var/lib/postgresql/data/pgdata"
+      # POSTGRES_PASSWORD_FILE: /run/secrets/ig_password
+     deploy:
+       placement:
+         constraints:
+           - node.labels.database==yes
+     volumes:
+       - "/mnt/efs/postgres-data:/var/lib/postgresql/data"
+  
+   web:
+     image: "elisamek/image-gallery"
+     environment:
+       PG_HOST: "database"
+       PG_PORT: "5432"
+       IG_USER: "image_gallery"
+       IG_DB: "image_gallery"
+       IG_PASSWD: "password"
+     ports:
+       - "5555:5555"
+     deploy:
+       replicas: 4
+     depends_on:
+       - "database"
+        
+         

@@ -1,0 +1,5 @@
+FROM postgres:11 
+
+ENV POSTGRES_DB ="image_gallery"
+ENV POSTGRES_USER ="image_gallery"
+ENV POSTGRES_PASSWORD ="password"
