@@ -1,5 +1,5 @@
 ---
-version: "3"
+version: "3.8"
 
 services:
      
@@ -8,29 +8,42 @@ services:
      environment:
        POSTGRES_USER: image_gallery
        POSTGRES_DB: image_gallery
-       POSTGRES_PASSWORD: "password"
        PGDATA: "/var/lib/postgresql/data/pgdata"
-      # POSTGRES_PASSWORD_FILE: /run/secrets/ig_password
+       POSTGRES_PASSWORD_FILE: /run/secrets/ig_password
+     secrets:
+       - ig_password
      deploy:
        placement:
          constraints:
            - node.labels.database==yes
+       replicas: 1
      volumes:
        - "/mnt/efs/postgres-data:/var/lib/postgresql/data"
   
-   web:
+   image_gallery:
      image: "elisamek/image-gallery"
      environment:
        PG_HOST: "database"
        PG_PORT: "5432"
        IG_USER: "image_gallery"
        IG_DB: "image_gallery"
-       IG_PASSWD: "password"
+       IG_PASSWD_FILE: /run/secrets/ig_password
+       FLASK_SESSION: /run/secrets/flask_session
+       S3_IMAGE_BUCKET: "eli.samek.image-gallery"
      ports:
-       - "5555:5555"
+       - "80:5555"
+       - "8888:5555"
+     secrets:
+       - ig_password
+       - flask_session
      deploy:
        replicas: 4
      depends_on:
        - "database"
         
          
+secrets:
+  ig_password:
+    external: true
+  flask_session:
+    external: true
