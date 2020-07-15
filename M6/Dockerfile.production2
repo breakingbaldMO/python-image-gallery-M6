@@ -17,6 +17,6 @@ ENV IG_DATABASE=postgres
 ENV IG_USER=postgres
 ENV IG_PASSWD=password
 ENV IG_PASSWD_FILE=password.txt
-ENV S3_IMAGE_BUCKET=''
+ENV S3_IMAGE_BUCKET='eli.samek.image-gallery'
 
 CMD ["uwsgi", "--http", ":5555", "--module", "app:app", "--master", "--processes", "4", "--threads", "2", "--stats", "0.0.0.0:9191"]

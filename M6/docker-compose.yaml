@@ -26,7 +26,7 @@ services:
        PG_HOST: "database"
        PG_PORT: "5432"
        IG_USER: "image_gallery"
-       IG_DB: "image_gallery"
+       IG_DATABASE: "image_gallery"
        IG_PASSWD_FILE: /run/secrets/ig_password
        FLASK_SESSION: /run/secrets/flask_session
        S3_IMAGE_BUCKET: "eli.samek.image-gallery"
